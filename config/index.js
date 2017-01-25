@@ -9,5 +9,5 @@ export default {
     // "mongoUrl": "mongodb://localhost:27017/aenonic",
     "bodyLimit": "100kb", 
     dbPort: 28015,
-    dbUrl: 'localhost',
+    dbUrl: 'localhost'
 }

@@ -29,24 +29,12 @@ app.use(bodyParser.json({
     limit: config.bodyLimit
 }));
 
+//TODO: Make this functional only in development, exclude from production
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
-// Passport config
-//app.use(passport.initialize());
-
-
-
-// passport.use(new Strategy({
-//     usernameField: 'email',
-//     passwordField: 'password',
-// }, Account.authenticate() ));
-
-// passport.serializeUser(Account.serializeUser());
-// passport.deserializeUser(Account.deserializeUser());
 
 // API ROUTES V1
 

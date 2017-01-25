@@ -16,7 +16,6 @@ let type = thinky.type;
 
 //Account model
 export let User = thinky.createModel("User", {
-    id: type.string(),
     email: type.string(),
     password: type.string()
 });
