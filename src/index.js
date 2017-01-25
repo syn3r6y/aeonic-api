@@ -16,6 +16,7 @@ import colors from 'colors';
 // FILE IMPORTS
 import config from '../config';
 import routes from '../routes';
+let Account = require('../model/account');
 
 let app = express();
 
@@ -35,17 +36,17 @@ app.use(function(req, res, next) {
 });
 
 // Passport config
-app.use(passport.initialize());
+//app.use(passport.initialize());
 
-let Account = require('../model/account');
 
-passport.use(new Strategy({
-    usernameField: 'email',
-    passwordField: 'password',
-}, Account.authenticate() ));
 
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
+// passport.use(new Strategy({
+//     usernameField: 'email',
+//     passwordField: 'password',
+// }, Account.authenticate() ));
+
+// passport.serializeUser(Account.serializeUser());
+// passport.deserializeUser(Account.deserializeUser());
 
 // API ROUTES V1
 

@@ -5,14 +5,29 @@
  */
 
 // LIBRARY IMPORTS
-import mongoose from 'mongoose';
-import passportLocalMongoose from 'passport-local-mongoose';
+// import mongoose from 'mongoose';
+// import passportLocalMongoose from 'passport-local-mongoose';
 
-const Schema = mongoose.Schema;
-let Account = new Schema({
-    email: String,
-    password: String
+import thinky from '../config/db';
+import config from '../config/index';
+const r = thinky.r;
+
+let type = thinky.type;
+
+//Account model
+export let User = thinky.createModel("User", {
+    id: type.string(),
+    email: type.string(),
+    password: type.string()
 });
 
-Account.plugin(passportLocalMongoose);
-module.exports = mongoose.model('Account', Account);
+
+
+// const Schema = mongoose.Schema;
+// let Account = new Schema({
+//     email: String,
+//     password: String
+// });
+
+// Account.plugin(passportLocalMongoose);
+// module.exports = mongoose.model('Account', Account);    
