@@ -74,10 +74,10 @@ export default ( { config, db } ) => {
     //     res.status(200).send('Successfully logged out.');
     // });
 
-    // // v1/account/me
-    // api.get('/me', authorize, (req, res) => {
-    //     res.status(200).json(req.user);
-    // });
+    // v1/account/me
+    api.get('/me', authorize, (req, res) => {
+        res.status(200).send("Authenticated.");
+    });
 
     return api;
 };
